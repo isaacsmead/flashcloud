@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A5663681FC8843A008E0E8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5663671FC8843A008E0E8D /* AppDelegate.swift */; };
+		6A56636A1FC8843A008E0E8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5663691FC8843A008E0E8D /* ViewController.swift */; };
+		6A56636D1FC8843A008E0E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A56636B1FC8843A008E0E8D /* Main.storyboard */; };
+		6A56636F1FC8843A008E0E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A56636E1FC8843A008E0E8D /* Assets.xcassets */; };
+		6A5663721FC8843A008E0E8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5663701FC8843A008E0E8D /* LaunchScreen.storyboard */; };
+		6A56637D1FC8843A008E0E8D /* FlashCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A56637C1FC8843A008E0E8D /* FlashCloudTests.swift */; };
+		6A5663881FC8843A008E0E8D /* FlashCloudUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5663871FC8843A008E0E8D /* FlashCloudUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A5663791FC8843A008E0E8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A56635C1FC8843A008E0E8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A5663631FC8843A008E0E8D;
+			remoteInfo = FlashCloud;
+		};
+		6A5663841FC8843A008E0E8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A56635C1FC8843A008E0E8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A5663631FC8843A008E0E8D;
+			remoteInfo = FlashCloud;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6A5663641FC8843A008E0E8D /* FlashCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5663671FC8843A008E0E8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A5663691FC8843A008E0E8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A56636C1FC8843A008E0E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A56636E1FC8843A008E0E8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A5663711FC8843A008E0E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A5663731FC8843A008E0E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A5663781FC8843A008E0E8D /* FlashCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A56637C1FC8843A008E0E8D /* FlashCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCloudTests.swift; sourceTree = "<group>"; };
+		6A56637E1FC8843A008E0E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A5663831FC8843A008E0E8D /* FlashCloudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCloudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5663871FC8843A008E0E8D /* FlashCloudUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCloudUITests.swift; sourceTree = "<group>"; };
+		6A5663891FC8843A008E0E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A5663611FC8843A008E0E8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5663751FC8843A008E0E8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5663801FC8843A008E0E8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A56635B1FC8843A008E0E8D = {
+			isa = PBXGroup;
+			children = (
+				6A5663661FC8843A008E0E8D /* FlashCloud */,
+				6A56637B1FC8843A008E0E8D /* FlashCloudTests */,
+				6A5663861FC8843A008E0E8D /* FlashCloudUITests */,
+				6A5663651FC8843A008E0E8D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6A5663651FC8843A008E0E8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A5663641FC8843A008E0E8D /* FlashCloud.app */,
+				6A5663781FC8843A008E0E8D /* FlashCloudTests.xctest */,
+				6A5663831FC8843A008E0E8D /* FlashCloudUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A5663661FC8843A008E0E8D /* FlashCloud */ = {
+			isa = PBXGroup;
+			children = (
+				6A5663671FC8843A008E0E8D /* AppDelegate.swift */,
+				6A5663691FC8843A008E0E8D /* ViewController.swift */,
+				6A56636B1FC8843A008E0E8D /* Main.storyboard */,
+				6A56636E1FC8843A008E0E8D /* Assets.xcassets */,
+				6A5663701FC8843A008E0E8D /* LaunchScreen.storyboard */,
+				6A5663731FC8843A008E0E8D /* Info.plist */,
+			);
+			path = FlashCloud;
+			sourceTree = "<group>";
+		};
+		6A56637B1FC8843A008E0E8D /* FlashCloudTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A56637C1FC8843A008E0E8D /* FlashCloudTests.swift */,
+				6A56637E1FC8843A008E0E8D /* Info.plist */,
+			);
+			path = FlashCloudTests;
+			sourceTree = "<group>";
+		};
+		6A5663861FC8843A008E0E8D /* FlashCloudUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6A5663871FC8843A008E0E8D /* FlashCloudUITests.swift */,
+				6A5663891FC8843A008E0E8D /* Info.plist */,
+			);
+			path = FlashCloudUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A5663631FC8843A008E0E8D /* FlashCloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A56638C1FC8843A008E0E8D /* Build configuration list for PBXNativeTarget "FlashCloud" */;
+			buildPhases = (
+				6A5663601FC8843A008E0E8D /* Sources */,
+				6A5663611FC8843A008E0E8D /* Frameworks */,
+				6A5663621FC8843A008E0E8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlashCloud;
+			productName = FlashCloud;
+			productReference = 6A5663641FC8843A008E0E8D /* FlashCloud.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A5663771FC8843A008E0E8D /* FlashCloudTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A56638F1FC8843A008E0E8D /* Build configuration list for PBXNativeTarget "FlashCloudTests" */;
+			buildPhases = (
+				6A5663741FC8843A008E0E8D /* Sources */,
+				6A5663751FC8843A008E0E8D /* Frameworks */,
+				6A5663761FC8843A008E0E8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A56637A1FC8843A008E0E8D /* PBXTargetDependency */,
+			);
+			name = FlashCloudTests;
+			productName = FlashCloudTests;
+			productReference = 6A5663781FC8843A008E0E8D /* FlashCloudTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6A5663821FC8843A008E0E8D /* FlashCloudUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A5663921FC8843A008E0E8D /* Build configuration list for PBXNativeTarget "FlashCloudUITests" */;
+			buildPhases = (
+				6A56637F1FC8843A008E0E8D /* Sources */,
+				6A5663801FC8843A008E0E8D /* Frameworks */,
+				6A5663811FC8843A008E0E8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A5663851FC8843A008E0E8D /* PBXTargetDependency */,
+			);
+			name = FlashCloudUITests;
+			productName = FlashCloudUITests;
+			productReference = 6A5663831FC8843A008E0E8D /* FlashCloudUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A56635C1FC8843A008E0E8D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Isaac Smead";
+				TargetAttributes = {
+					6A5663631FC8843A008E0E8D = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					6A5663771FC8843A008E0E8D = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6A5663631FC8843A008E0E8D;
+					};
+					6A5663821FC8843A008E0E8D = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6A5663631FC8843A008E0E8D;
+					};
+				};
+			};
+			buildConfigurationList = 6A56635F1FC8843A008E0E8D /* Build configuration list for PBXProject "FlashCloud" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A56635B1FC8843A008E0E8D;
+			productRefGroup = 6A5663651FC8843A008E0E8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A5663631FC8843A008E0E8D /* FlashCloud */,
+				6A5663771FC8843A008E0E8D /* FlashCloudTests */,
+				6A5663821FC8843A008E0E8D /* FlashCloudUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A5663621FC8843A008E0E8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A5663721FC8843A008E0E8D /* LaunchScreen.storyboard in Resources */,
+				6A56636F1FC8843A008E0E8D /* Assets.xcassets in Resources */,
+				6A56636D1FC8843A008E0E8D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5663761FC8843A008E0E8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5663811FC8843A008E0E8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A5663601FC8843A008E0E8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A56636A1FC8843A008E0E8D /* ViewController.swift in Sources */,
+				6A5663681FC8843A008E0E8D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A5663741FC8843A008E0E8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A56637D1FC8843A008E0E8D /* FlashCloudTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A56637F1FC8843A008E0E8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A5663881FC8843A008E0E8D /* FlashCloudUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A56637A1FC8843A008E0E8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A5663631FC8843A008E0E8D /* FlashCloud */;
+			targetProxy = 6A5663791FC8843A008E0E8D /* PBXContainerItemProxy */;
+		};
+		6A5663851FC8843A008E0E8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A5663631FC8843A008E0E8D /* FlashCloud */;
+			targetProxy = 6A5663841FC8843A008E0E8D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6A56636B1FC8843A008E0E8D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A56636C1FC8843A008E0E8D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6A5663701FC8843A008E0E8D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A5663711FC8843A008E0E8D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A56638A1FC8843A008E0E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6A56638B1FC8843A008E0E8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A56638D1FC8843A008E0E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCloud/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloud";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A56638E1FC8843A008E0E8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCloud/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloud";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6A5663901FC8843A008E0E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCloudTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloudTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCloud.app/FlashCloud";
+			};
+			name = Debug;
+		};
+		6A5663911FC8843A008E0E8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCloudTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloudTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCloud.app/FlashCloud";
+			};
+			name = Release;
+		};
+		6A5663931FC8843A008E0E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCloudUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloudUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlashCloud;
+			};
+			name = Debug;
+		};
+		6A5663941FC8843A008E0E8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCloudUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloudUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlashCloud;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A56635F1FC8843A008E0E8D /* Build configuration list for PBXProject "FlashCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A56638A1FC8843A008E0E8D /* Debug */,
+				6A56638B1FC8843A008E0E8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A56638C1FC8843A008E0E8D /* Build configuration list for PBXNativeTarget "FlashCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A56638D1FC8843A008E0E8D /* Debug */,
+				6A56638E1FC8843A008E0E8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A56638F1FC8843A008E0E8D /* Build configuration list for PBXNativeTarget "FlashCloudTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5663901FC8843A008E0E8D /* Debug */,
+				6A5663911FC8843A008E0E8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A5663921FC8843A008E0E8D /* Build configuration list for PBXNativeTarget "FlashCloudUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5663931FC8843A008E0E8D /* Debug */,
+				6A5663941FC8843A008E0E8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A56635C1FC8843A008E0E8D /* Project object */;
+}
