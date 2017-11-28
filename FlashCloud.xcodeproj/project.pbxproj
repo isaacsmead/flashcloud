@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A2F5F571FC9070500BDA424 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */; };
+		6A2F5F581FC9070500BDA424 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F561FC9070500BDA424 /* Alamofire.framework */; };
 		6A5663681FC8843A008E0E8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5663671FC8843A008E0E8D /* AppDelegate.swift */; };
 		6A56636A1FC8843A008E0E8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5663691FC8843A008E0E8D /* ViewController.swift */; };
 		6A56636D1FC8843A008E0E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A56636B1FC8843A008E0E8D /* Main.storyboard */; };
@@ -14,6 +16,13 @@
 		6A5663721FC8843A008E0E8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5663701FC8843A008E0E8D /* LaunchScreen.storyboard */; };
 		6A56637D1FC8843A008E0E8D /* FlashCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A56637C1FC8843A008E0E8D /* FlashCloudTests.swift */; };
 		6A5663881FC8843A008E0E8D /* FlashCloudUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5663871FC8843A008E0E8D /* FlashCloudUITests.swift */; };
+		6A6A52E51FCCF48E0099B72E /* FinderCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A52E41FCCF48E0099B72E /* FinderCollectionViewController.swift */; };
+		6A6A52E71FCCF4B40099B72E /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A52E61FCCF4B40099B72E /* ThumbnailCell.swift */; };
+		6A6A52E91FCCF4C80099B72E /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A52E81FCCF4C80099B72E /* FolderCell.swift */; };
+		6A6A52EB1FCD1B8D0099B72E /* ThumbnailCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A52EA1FCD1B8D0099B72E /* ThumbnailCollection.swift */; };
+		6AD0E7731FCA9743006D2C89 /* NextcloudConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0E7721FCA9743006D2C89 /* NextcloudConnection.swift */; };
+		6AD0E7751FCA976D006D2C89 /* FlashairConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0E7741FCA976D006D2C89 /* FlashairConnection.swift */; };
+		6AD0E7771FCA9950006D2C89 /* FlashairSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AD0E7761FCA9950006D2C89 /* FlashairSettings.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		6A2F5F561FC9070500BDA424 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6A5663641FC8843A008E0E8D /* FlashCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5663671FC8843A008E0E8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A5663691FC8843A008E0E8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,14 @@
 		6A5663831FC8843A008E0E8D /* FlashCloudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCloudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5663871FC8843A008E0E8D /* FlashCloudUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCloudUITests.swift; sourceTree = "<group>"; };
 		6A5663891FC8843A008E0E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A6A52E41FCCF48E0099B72E /* FinderCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderCollectionViewController.swift; sourceTree = "<group>"; };
+		6A6A52E61FCCF4B40099B72E /* ThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
+		6A6A52E81FCCF4C80099B72E /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		6A6A52EA1FCD1B8D0099B72E /* ThumbnailCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollection.swift; sourceTree = "<group>"; };
+		6A6A52EF1FCD1FA00099B72E /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
+		6AD0E7721FCA9743006D2C89 /* NextcloudConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextcloudConnection.swift; sourceTree = "<group>"; };
+		6AD0E7741FCA976D006D2C89 /* FlashairConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashairConnection.swift; sourceTree = "<group>"; };
+		6AD0E7761FCA9950006D2C89 /* FlashairSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FlashairSettings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A2F5F571FC9070500BDA424 /* AlamofireImage.framework in Frameworks */,
+				6A2F5F581FC9070500BDA424 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A2F5F541FC9070500BDA424 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A2F5F561FC9070500BDA424 /* Alamofire.framework */,
+				6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6A56635B1FC8843A008E0E8D = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +111,7 @@
 				6A56637B1FC8843A008E0E8D /* FlashCloudTests */,
 				6A5663861FC8843A008E0E8D /* FlashCloudUITests */,
 				6A5663651FC8843A008E0E8D /* Products */,
+				6A2F5F541FC9070500BDA424 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +128,20 @@
 		6A5663661FC8843A008E0E8D /* FlashCloud */ = {
 			isa = PBXGroup;
 			children = (
+				6A6A52EE1FCD1F870099B72E /* images */,
 				6A5663671FC8843A008E0E8D /* AppDelegate.swift */,
 				6A5663691FC8843A008E0E8D /* ViewController.swift */,
 				6A56636B1FC8843A008E0E8D /* Main.storyboard */,
 				6A56636E1FC8843A008E0E8D /* Assets.xcassets */,
 				6A5663701FC8843A008E0E8D /* LaunchScreen.storyboard */,
 				6A5663731FC8843A008E0E8D /* Info.plist */,
+				6AD0E7721FCA9743006D2C89 /* NextcloudConnection.swift */,
+				6AD0E7741FCA976D006D2C89 /* FlashairConnection.swift */,
+				6AD0E7761FCA9950006D2C89 /* FlashairSettings.plist */,
+				6A6A52E41FCCF48E0099B72E /* FinderCollectionViewController.swift */,
+				6A6A52E61FCCF4B40099B72E /* ThumbnailCell.swift */,
+				6A6A52E81FCCF4C80099B72E /* FolderCell.swift */,
+				6A6A52EA1FCD1B8D0099B72E /* ThumbnailCollection.swift */,
 			);
 			path = FlashCloud;
 			sourceTree = "<group>";
@@ -125,6 +164,14 @@
 			path = FlashCloudUITests;
 			sourceTree = "<group>";
 		};
+		6A6A52EE1FCD1F870099B72E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6A6A52EF1FCD1FA00099B72E /* defaultImage.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +182,7 @@
 				6A5663601FC8843A008E0E8D /* Sources */,
 				6A5663611FC8843A008E0E8D /* Frameworks */,
 				6A5663621FC8843A008E0E8D /* Resources */,
+				6A2F5F591FC9077D00BDA424 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -235,6 +283,7 @@
 				6A5663721FC8843A008E0E8D /* LaunchScreen.storyboard in Resources */,
 				6A56636F1FC8843A008E0E8D /* Assets.xcassets in Resources */,
 				6A56636D1FC8843A008E0E8D /* Main.storyboard in Resources */,
+				6AD0E7771FCA9950006D2C89 /* FlashairSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,11 +303,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A2F5F591FC9077D00BDA424 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6A5663601FC8843A008E0E8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6A52E71FCCF4B40099B72E /* ThumbnailCell.swift in Sources */,
+				6A6A52E91FCCF4C80099B72E /* FolderCell.swift in Sources */,
+				6A6A52E51FCCF48E0099B72E /* FinderCollectionViewController.swift in Sources */,
+				6AD0E7731FCA9743006D2C89 /* NextcloudConnection.swift in Sources */,
+				6A6A52EB1FCD1B8D0099B72E /* ThumbnailCollection.swift in Sources */,
+				6AD0E7751FCA976D006D2C89 /* FlashairConnection.swift in Sources */,
 				6A56636A1FC8843A008E0E8D /* ViewController.swift in Sources */,
 				6A5663681FC8843A008E0E8D /* AppDelegate.swift in Sources */,
 			);
@@ -426,11 +499,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJHZK7Q34S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlashCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloud";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,11 +521,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJHZK7Q34S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlashCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloud";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,11 +544,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJHZK7Q34S;
 				INFOPLIST_FILE = FlashCloudTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloudTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCloud.app/FlashCloud";
@@ -471,11 +563,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJHZK7Q34S;
 				INFOPLIST_FILE = FlashCloudTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloudTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCloud.app/FlashCloud";
@@ -486,11 +581,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJHZK7Q34S;
 				INFOPLIST_FILE = FlashCloudUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloudUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FlashCloud;
@@ -501,11 +599,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJHZK7Q34S;
 				INFOPLIST_FILE = FlashCloudUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-2345.FlashCloudUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FlashCloud;
