@@ -11,11 +11,17 @@ import UIKit
 
 class ThumbnailCollection {
     
-    var keys: [String]
+    var fileNames: [String]
     var thumbs: Dictionary<String, UIImage>
     let defaultImage: UIImage = #imageLiteral(resourceName: "defaultImage.png")
+    
+    init(){
+        fileNames = []
+        thumbs = Dictionary<String, UIImage>()
+    }
+    
     init(imageFiles: [String]){
-        keys = imageFiles
+        fileNames = imageFiles
         thumbs = Dictionary<String, UIImage>()
     }
     
@@ -25,7 +31,7 @@ class ThumbnailCollection {
     
     subscript (index: Int) -> UIImage {
         get {
-            if index < keys.count, let img = thumbs[keys[index]]{
+            if index < fileNames.count, let img = thumbs[fileNames[index]]{
                 return img
             }
             return defaultImage
@@ -33,11 +39,11 @@ class ThumbnailCollection {
     }
     
     func clear(){
-        keys.removeAll()
+        fileNames.removeAll()
         thumbs.removeAll()
     }
     
     func count() -> Int {
-        return keys.count
+        return fileNames.count
     }
 }

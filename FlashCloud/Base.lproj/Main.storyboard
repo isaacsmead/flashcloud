@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Finder Collection View Controller-->
+        <!--Flashair Navigator-->
         <scene sceneID="Ey0-2O-luN">
             <objects>
-                <collectionViewController id="tp0-Vu-bsF" customClass="FinderCollectionViewController" customModule="FlashCloud" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="tp0-Vu-bsF" customClass="FlashairNavigator" customModule="FlashCloud" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xmB-Cv-hZ2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,6 +39,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder.png" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-2E-LYH">
+                                            <rect key="frame" x="7" y="0.0" width="60" height="55"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <size key="customSize" width="75" height="75"/>
@@ -60,6 +64,9 @@
                                     </subviews>
                                 </view>
                                 <size key="customSize" width="75" height="75"/>
+                                <connections>
+                                    <outlet property="image" destination="iWd-qz-1tN" id="Efi-sQ-RWv"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -109,4 +116,7 @@
             <point key="canvasLocation" x="1280.8" y="-343.17841079460271"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="folder.png" width="512" height="512"/>
+    </resources>
 </document>

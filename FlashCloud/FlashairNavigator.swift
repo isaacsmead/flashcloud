@@ -8,12 +8,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+class FlashairNavigator: UICollectionViewController {
 
-class FinderCollectionViewController: UICollectionViewController {
-
-    var thumbs: [UIImage] = []
+    var thumbs = ThumbnailCollection()
     var dirs: [String] = []
+    var path: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,9 @@ class FinderCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(FolderCell.self, forCellWithReuseIdentifier: "FolderCell")
+        self.collectionView!.register(ThumbnailCell.self, forCellWithReuseIdentifier: "ThumbnailCell")
+
 
         // Do any additional setup after loading the view.
     }
@@ -32,41 +33,50 @@ class FinderCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let dirSection = (dirs.count > 0) ? 1 : 0
-        let thumbSection = (thumbs.count > 0) ? 1 : 0
-        return dirSection + thumbSection
+        return 2
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        if(section == 0){
+            return dirs.count
+        }
+        return thumbs.count()
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(indexPath.section == 0){
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FolderCell", for: indexPath)
+            (cell as! FolderCell).setLabel(fileName: dirs[indexPath.row])
             return cell
         }
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailCell", for: indexPath)
+            (cell as! ThumbnailCell).setImage(image: thumbs[indexPath.row])
             return cell
 
         }
-  }
+        
+    }
+    
+    
+    
 
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
+
+    
     // MARK: UICollectionViewDelegate
 
     /*
