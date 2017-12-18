@@ -10,11 +10,12 @@ import UIKit
 
 class FolderCell: UICollectionViewCell {
     
+
     @IBOutlet weak var folderLabel: UILabel!
     
     
     func setLabel(fileName: String){
-        folderLabel.text = fileName
+        //folderLabel.text = fileName
     }
     
 }

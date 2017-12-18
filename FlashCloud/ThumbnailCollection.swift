@@ -13,8 +13,9 @@ class ThumbnailCollection {
     
     var fileNames: [String]
     var thumbs: Dictionary<String, UIImage>
-    let defaultImage: UIImage = #imageLiteral(resourceName: "defaultImage.png")
+    let defaultImage = UIImage(named: "folder.png")
     
+// DO we need a default init?
     init(){
         fileNames = []
         thumbs = Dictionary<String, UIImage>()
@@ -25,8 +26,12 @@ class ThumbnailCollection {
         thumbs = Dictionary<String, UIImage>()
     }
     
-    func addImage(fileName: String, image: UIImage){
-        thumbs[fileName] = image
+    func addThumbnail(fileName: String, image: UIImage) -> Bool{
+        if fileNames.contains(fileName){
+            thumbs[fileName] = image
+            return true
+        }
+        return false
     }
     
     subscript (index: Int) -> UIImage {
@@ -34,7 +39,7 @@ class ThumbnailCollection {
             if index < fileNames.count, let img = thumbs[fileNames[index]]{
                 return img
             }
-            return defaultImage
+            return defaultImage!
         }
     }
     
@@ -45,5 +50,9 @@ class ThumbnailCollection {
     
     func count() -> Int {
         return fileNames.count
+    }
+    
+    func getFileNames() -> [String]{
+        return fileNames
     }
 }

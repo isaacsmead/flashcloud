@@ -39,7 +39,7 @@ class ViewController: UIViewController {
 
     @IBAction func test() {
         
-        FlashairConnection.shared.getFileList()
+        //FlashairConnection.sharedInstance.getFileList()
 
     }
     

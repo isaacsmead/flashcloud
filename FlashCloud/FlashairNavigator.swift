@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Foundation
 
 class FlashairNavigator: UICollectionViewController {
 
     var thumbs = ThumbnailCollection()
     var dirs: [String] = []
     var path: [String] = []
+    let flashAirConn = FlashairConnection.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,11 @@ class FlashairNavigator: UICollectionViewController {
         self.collectionView!.register(FolderCell.self, forCellWithReuseIdentifier: "FolderCell")
         self.collectionView!.register(ThumbnailCell.self, forCellWithReuseIdentifier: "ThumbnailCell")
 
-
+        if let savedPath = UserDefaults.standard.string(forKey: "savedPath"){
+            path = savedPath.components(separatedBy: "/")
+        }
+        
+        flashAirConn.getFileList(path: path.joined(separator: "/"), callback: self.onFlashairFileList)
         // Do any additional setup after loading the view.
     }
 
@@ -62,8 +68,24 @@ class FlashairNavigator: UICollectionViewController {
         
     }
     
+    func onFlashairFileList(_ dirNames:[String], _ fileNames:[String]){
+        dirs = dirNames
+        thumbs = ThumbnailCollection(imageFiles: fileNames)
+        for fileName in thumbs.getFileNames(){
+            flashAirConn.getThumbnail(fileName: fileName, path: path.joined(separator: "/"), callback: self.onThumbnail)
+        }
+        
+        self.collectionView?.reloadData()
+    }
     
     
+    func onThumbnail(_ fileName:String, _ thumb: UIImage){
+        if !thumbs.addThumbnail(fileName: fileName, image: thumb) {
+            NSLog("Error, unexpected thumbnail \(fileName)")
+        }
+        
+        /// TODO redraw
+    }
 
     
     /*
