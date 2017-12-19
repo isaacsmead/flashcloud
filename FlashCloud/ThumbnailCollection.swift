@@ -13,17 +13,20 @@ class ThumbnailCollection {
     
     var fileNames: [String]
     var thumbs: Dictionary<String, UIImage>
-    let defaultImage = UIImage(named: "folder.png")
+    let defaultImage = UIImage(named: "defaultImage2.png")
+    var selected: Set<String>
     
 // DO we need a default init?
     init(){
         fileNames = []
         thumbs = Dictionary<String, UIImage>()
+        selected = Set<String>()
     }
     
     init(imageFiles: [String]){
         fileNames = imageFiles
         thumbs = Dictionary<String, UIImage>()
+        selected = Set<String>()
     }
     
     func addThumbnail(fileName: String, image: UIImage) -> Bool{
@@ -43,6 +46,26 @@ class ThumbnailCollection {
         }
     }
     
+    func select(index: Int){
+        if index < fileNames.count{
+            selected.insert(fileNames[index])
+        }
+    }
+    
+    func deSelect(index: Int){
+        if index < fileNames.count {
+            selected.remove(fileNames[index])
+        }
+    }
+    
+    func remove(fileName: String){
+        if let idx = fileNames.index(of: fileName){
+            thumbs.removeValue(forKey: fileName)
+            fileNames.remove(at: idx)
+            selected.remove(fileName)
+        }
+    }
+    
     func clear(){
         fileNames.removeAll()
         thumbs.removeAll()
@@ -55,4 +78,9 @@ class ThumbnailCollection {
     func getFileNames() -> [String]{
         return fileNames
     }
+    
+    func getSelected() -> [String] {
+        return Array(selected)
+    }
+    
 }

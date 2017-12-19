@@ -10,9 +10,11 @@ import UIKit
 
 class ThumbnailCell: UICollectionViewCell {
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     func setImage(image: UIImage){
-        self.image.image = image
+        self.imageView.image = image
+        //imageView.contentMode = .scale
     }
 }

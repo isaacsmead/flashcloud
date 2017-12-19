@@ -15,7 +15,7 @@ class FolderCell: UICollectionViewCell {
     
     
     func setLabel(fileName: String){
-        //folderLabel.text = fileName
+        folderLabel.text = fileName
     }
     
 }

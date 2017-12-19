@@ -73,8 +73,6 @@ class FlashairConnection  {
         for row in rows{
             let elements = row.split(separator: ",")
             if elements.count == 6 { // directory or file
-                let foo = String(elements[3])
-                let bar = String(elements[1])
                 if ((Int(elements[3])! & 0x10) !=  0) { //directory
                     dirs.append(String(elements[1]))
                 }
@@ -92,7 +90,7 @@ class FlashairConnection  {
     
     func getThumbnail(fileName: String, path: String, callback: @escaping (String, UIImage) -> Void){
         
-        let fullPath = "\(rootDir)/\(fileName)"
+        let fullPath =  (path == "") ? "\(rootDir)/\(fileName)" : "\(rootDir)/\(path)/\(fileName)"
         let urlStr = makeUrlString(command: cgiScripts.thumbnail.rawValue, args: [fullPath])
         
         Alamofire.request(urlStr, method: .get)
@@ -105,7 +103,21 @@ class FlashairConnection  {
                 }
         }
     }
-    
+    //http://flashair/upload.cgi?DEL=/DCIM/100__TSB/DSC_100.JPG
+    func deleteFile(fileName: String, path: String, callback: @escaping (String) -> Void){
+        let fullPath =  (path == "") ? "DEL=/\(rootDir)/\(fileName)" : "DEL=/\(rootDir)/\(path)/\(fileName)"
+        let urlStr = makeUrlString(command: cgiScripts.upload.rawValue, args: [fullPath])
+        Alamofire.request(urlStr).responseString { (response) in
+            if(response.result.isSuccess == false){
+                NSLog(response.result.debugDescription)
+            }
+            else if let status = response.result.value {
+                if(status == "SUCCESS"){
+                    callback(fileName)
+                }
+            }
+        }
+    }
 
     private func makeUrlString(command: String, args: [String]) -> String{
         var url = "http://\(host)/\(command)"

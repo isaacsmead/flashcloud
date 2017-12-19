@@ -10,6 +10,9 @@
 		4E9713271FCD3B0E0074DC06 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9713261FCD3B0E0074DC06 /* folder.png */; };
 		6A2F5F571FC9070500BDA424 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */; };
 		6A2F5F581FC9070500BDA424 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F561FC9070500BDA424 /* Alamofire.framework */; };
+		6A468BE81FE83BBF00137DC1 /* defaultImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A468BE71FE83BBF00137DC1 /* defaultImage2.png */; };
+		6A468BEA1FE843CB00137DC1 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A468BE91FE843CB00137DC1 /* CustomLayout.swift */; };
+		6A468BEC1FE883BE00137DC1 /* CustonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A468BEB1FE883BE00137DC1 /* CustonNavigationController.swift */; };
 		6A5663681FC8843A008E0E8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5663671FC8843A008E0E8D /* AppDelegate.swift */; };
 		6A56636A1FC8843A008E0E8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5663691FC8843A008E0E8D /* ViewController.swift */; };
 		6A56636D1FC8843A008E0E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A56636B1FC8843A008E0E8D /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		4E9713261FCD3B0E0074DC06 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
 		6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		6A2F5F561FC9070500BDA424 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		6A468BE71FE83BBF00137DC1 /* defaultImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage2.png; sourceTree = "<group>"; };
+		6A468BE91FE843CB00137DC1 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		6A468BEB1FE883BE00137DC1 /* CustonNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonNavigationController.swift; sourceTree = "<group>"; };
 		6A5663641FC8843A008E0E8D /* FlashCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5663671FC8843A008E0E8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A5663691FC8843A008E0E8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,8 @@
 				6A6A52E61FCCF4B40099B72E /* ThumbnailCell.swift */,
 				6A6A52E81FCCF4C80099B72E /* FolderCell.swift */,
 				6A6A52EA1FCD1B8D0099B72E /* ThumbnailCollection.swift */,
+				6A468BE91FE843CB00137DC1 /* CustomLayout.swift */,
+				6A468BEB1FE883BE00137DC1 /* CustonNavigationController.swift */,
 			);
 			path = FlashCloud;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 		6A6A52EE1FCD1F870099B72E /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6A468BE71FE83BBF00137DC1 /* defaultImage2.png */,
 				4E9713261FCD3B0E0074DC06 /* folder.png */,
 				6A6A52EF1FCD1FA00099B72E /* defaultImage.png */,
 			);
@@ -285,6 +294,7 @@
 			files = (
 				6A5663721FC8843A008E0E8D /* LaunchScreen.storyboard in Resources */,
 				6A56636F1FC8843A008E0E8D /* Assets.xcassets in Resources */,
+				6A468BE81FE83BBF00137DC1 /* defaultImage2.png in Resources */,
 				6A56636D1FC8843A008E0E8D /* Main.storyboard in Resources */,
 				6AD0E7771FCA9950006D2C89 /* FlashairSettings.plist in Resources */,
 				4E9713271FCD3B0E0074DC06 /* folder.png in Resources */,
@@ -330,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A468BEA1FE843CB00137DC1 /* CustomLayout.swift in Sources */,
 				6A6A52E71FCCF4B40099B72E /* ThumbnailCell.swift in Sources */,
 				6A6A52E91FCCF4C80099B72E /* FolderCell.swift in Sources */,
 				6A6A52E51FCCF48E0099B72E /* FlashairNavigator.swift in Sources */,
@@ -337,6 +348,7 @@
 				6A6A52EB1FCD1B8D0099B72E /* ThumbnailCollection.swift in Sources */,
 				6AD0E7751FCA976D006D2C89 /* FlashairConnection.swift in Sources */,
 				6A56636A1FC8843A008E0E8D /* ViewController.swift in Sources */,
+				6A468BEC1FE883BE00137DC1 /* CustonNavigationController.swift in Sources */,
 				6A5663681FC8843A008E0E8D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
