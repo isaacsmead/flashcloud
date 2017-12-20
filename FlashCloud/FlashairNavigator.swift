@@ -16,7 +16,6 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
     var thumbs = ThumbnailCollection()
     var dirs: [String] = []
     var path: [String] = []
-    let flashAirConn = FlashairConnection.sharedInstance
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -29,7 +28,7 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
         collectionView?.allowsMultipleSelection = true
         
         // Uncomment the following line to preserve selection between presentations
-        //self.clearsSelectionOnViewWillAppear = false
+        //self.clearsSelectionOnViewWillAppear = true
 
         if let savedPath = UserDefaults.standard.string(forKey: "savedPath"){
             path = savedPath.components(separatedBy: "/")
@@ -45,6 +44,7 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     @IBAction func upOneLevel(_ sender: UIBarButtonItem) {
+        deselectAll()
         if(path.count > 0){
             path.removeLast()
         }
@@ -53,7 +53,7 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
 
     @IBAction func deleteSelected(_ sender: Any) {
         for fileName in thumbs.getSelected(){
-            flashAirConn.deleteFile(fileName: fileName,
+            FlashairConnection.deleteFile(fileName: fileName,
                                     path: path.joined(separator: "/"),callback: onFileDeleted)
         }
     }
@@ -93,21 +93,16 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(indexPath.section == 0){
             path.append(dirs[indexPath.row])
+            deselectAll()
             updateFileList()
         }
         else{
-            //addToList.append(objectsArray[indexPath.row])
-            let cell = collectionView.cellForItem(at: indexPath)
-            cell?.layer.borderWidth = 2.0
-            cell?.layer.borderColor = UIColor.blue.cgColor
             thumbs.select(index: indexPath.row)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath){
         if(indexPath.section == 1){
-            let cell = collectionView.cellForItem(at: indexPath)
-            cell?.layer.borderWidth = 0
             thumbs.deSelect(index: indexPath.row)
         }
     }
@@ -117,9 +112,9 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
         collectionView?.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition(rawValue: 0))
         thumbs = ThumbnailCollection(imageFiles: fileNames)
         for fileName in thumbs.getFileNames(){
-            flashAirConn.getThumbnail(fileName: fileName, path: path.joined(separator: "/"), callback: self.onThumbnail)
+            FlashairConnection.getThumbnail(fileName: fileName, path: path.joined(separator: "/"), callback: self.onThumbnail)
         }
-        
+
         collectionView.reloadData()
     }
     
@@ -127,16 +122,24 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
         if !thumbs.addThumbnail(fileName: fileName, image: thumb) {
             NSLog("Error, unexpected thumbnail \(fileName)")
         }
-        collectionView.reloadData()
+        collectionView.reloadItems(at: <#T##[IndexPath]#>)
+        //collectionView.reloadData()
     }
     
     func onFileDeleted(_ fileName:String){
         thumbs.remove(fileName: fileName)
+        deselectAll()
         collectionView.reloadData()
     }
 
     private func updateFileList(){
-        flashAirConn.getFileList(path: path.joined(separator: "/"), callback: self.onFlashairFileList)
+        FlashairConnection.getFileList(path: path.joined(separator: "/"), callback: self.onFlashairFileList)
+    }
+    
+    private func deselectAll(){
+        for index in collectionView.indexPathsForSelectedItems! {
+            collectionView.deselectItem(at: index, animated: false)
+        }
     }
     
     /*

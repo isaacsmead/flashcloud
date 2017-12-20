@@ -22,12 +22,12 @@ class ViewController: UIViewController {
             serverTrustPolicyManager: CustomServerTrustPoliceManager()
         )
         
-        NotificationCenter
-            .default
-            .addObserver(self,
-                       selector: #selector(self.updateText),
-                       name: .picList,
-                       object: nil)
+//        NotificationCenter
+//            .default
+//            .addObserver(self,
+//                       selector: #selector(self.updateText),
+//                       name: .picList,
+//                       object: nil)
 
         // Do any additional setup after loading the view, typically from a nib.
     }

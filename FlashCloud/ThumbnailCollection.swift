@@ -12,21 +12,17 @@ import UIKit
 class ThumbnailCollection {
     
     var fileNames: [String]
-    var thumbs: Dictionary<String, UIImage>
+    var thumbs = Dictionary<String, UIImage>()
     let defaultImage = UIImage(named: "defaultImage2.png")
-    var selected: Set<String>
+    var selected = Set<String>()
     
 // DO we need a default init?
     init(){
         fileNames = []
-        thumbs = Dictionary<String, UIImage>()
-        selected = Set<String>()
     }
     
     init(imageFiles: [String]){
         fileNames = imageFiles
-        thumbs = Dictionary<String, UIImage>()
-        selected = Set<String>()
     }
     
     func addThumbnail(fileName: String, image: UIImage) -> Bool{
@@ -82,5 +78,4 @@ class ThumbnailCollection {
     func getSelected() -> [String] {
         return Array(selected)
     }
-    
 }

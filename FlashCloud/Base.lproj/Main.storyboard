@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,19 +54,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder.png" translatesAutoresizingMaskIntoConstraints="NO" id="EN5-41-HTW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="folder.png" translatesAutoresizingMaskIntoConstraints="NO" id="EN5-41-HTW">
                                                     <rect key="frame" x="11" y="13" width="84" height="74"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjc-gb-gZI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjc-gb-gZI">
                                                     <rect key="frame" x="14" y="78" width="81" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="EN5-41-HTW" firstAttribute="trailing" secondItem="gjc-gb-gZI" secondAttribute="trailing" id="0Cu-mA-Svg"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="EN5-41-HTW" secondAttribute="bottom" constant="20" id="1Yt-1D-ITa"/>
+                                            <constraint firstItem="gjc-gb-gZI" firstAttribute="top" secondItem="Jfv-dS-XIk" secondAttribute="topMargin" constant="58" id="Q6U-b6-R7J"/>
+                                            <constraint firstItem="gjc-gb-gZI" firstAttribute="leading" secondItem="Jfv-dS-XIk" secondAttribute="leadingMargin" constant="-2" id="T1A-mS-6ce"/>
+                                            <constraint firstItem="EN5-41-HTW" firstAttribute="top" secondItem="Jfv-dS-XIk" secondAttribute="topMargin" constant="-7" id="Y5h-Sw-TUv"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="gjc-gb-gZI" secondAttribute="bottom" constant="2" id="ifr-MP-Yy8"/>
+                                            <constraint firstItem="EN5-41-HTW" firstAttribute="centerX" secondItem="Jfv-dS-XIk" secondAttribute="centerX" id="lfv-MH-1fv"/>
+                                            <constraint firstItem="EN5-41-HTW" firstAttribute="leading" secondItem="Jfv-dS-XIk" secondAttribute="leadingMargin" constant="-5" id="x0E-XG-XH9"/>
+                                        </constraints>
                                         <size key="customSize" width="107" height="107"/>
                                         <connections>
                                             <outlet property="folderLabel" destination="gjc-gb-gZI" id="Bfd-WX-v5S"/>

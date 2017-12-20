@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>flashairHost</key>
+	<string>192.168.1.09</string>
+	<key>flashairRoot</key>
+	<string>DCIM</string>
+	<key>nextcloudHost</key>
+	<string>76.88.58.107</string>
+	<key>nexcloudPassword</key>
+	<string>cs646test</string>
+	<key>nextcloudUser</key>
+	<string>cs646</string>
+	<key>nextcloudRoot</key>
+	<string>flashair</string>
+</dict>
+</plist>
