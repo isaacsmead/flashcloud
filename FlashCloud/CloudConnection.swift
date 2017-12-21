@@ -41,7 +41,7 @@ class CloudConnection {
                 else {
                     let description = response.result.error?.localizedDescription ?? "unknown error"
                     NSLog("uploadImageData Error \(description)")
-                    NotificationCenter.default.post(name: .flashAirError, object: self,
+                    NotificationCenter.default.post(name: .nextCloudError, object: self,
                                                     userInfo: ["message": "Failed to upload image"])
                 }
             

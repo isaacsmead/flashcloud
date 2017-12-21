@@ -15,6 +15,6 @@
 	<key>nextcloudRoot</key>
 	<string>remote.php/dav/files</string>
 	<key>nextcloudTarget</key>
-	<string>flashair</string>
+	<string>uploads</string>
 </dict>
 </plist>

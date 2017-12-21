@@ -33,23 +33,42 @@ SETUP -- (to get flashair on your wireless lan)
 USING THE APP
 1.  when app opens navigate to settings screen
 
-2.  change Flashair Settings -> Host to what ever IP you chose above for the flashair
+2.  change Flashair Settings -> Host to what ever IP you chose in flashair CONFIG
 
 3.  select Save then Back
 
 4.  select back again to trigger refresh of data (i need to add code to make it automatic)
 
 5.  you can browse directories and images will apear in dirs that have them.  you can select
-    multiple images and either delete or upload.  Successful upload will also trigger delete
+    multiple images and delete or upload.  Successful upload will also trigger delete
 
 6.  you can see uploaded images at: https://76.88.58.107/nextcloud
     user: cs646
     password: cs646test
     the server (raspberry pi) is pretty slow and you'll get a security warning because it uses self-signed cert
 
+7.  High quality photos take a while to upload.  There are some random pics in the small-files directory
+    that will upload faster.  If you manually copy images to the flahair they need to be JPEG with thumbnail
+    imbedded in the EXIF.  Photos taken with digital camera should be fine so long as camera is set to JPEG format.
+
 KNOWN ISSUES
 1.  I need to add an event loop to check for connection/updates etc.  For now the only way a data
     fetch is triggered is with back button or clicking directory.
+
+2.  There is no stoppoing user input while reqests are pending so rapid button pushes just keep
+    queuing up requests.  This is especially a problem if the flashair is not online because the
+    request timeout is long so it takes a while for the error message to come back
+
+3.  I ran into some issues with a certian image causing the flashir itself to crash when download requested.
+    Same behavious via browser to the flashair.  I removed the troublesome image and haven't seen
+    the problem since.
+
+4.  Occasionally an image(s) wont upload, i tracked it down to a because resource locked code, probably
+    because my nextcloud uses mysql.  This happend to me when uploading many photos at once.
+    Workaround is to change destination directory.
+
+5.  Upload fails if destination directory doesn't exist in nextcloud.  I need to add code to check for
+    directory and create it if necessary.
 
 
 SHORTCOMINGS
