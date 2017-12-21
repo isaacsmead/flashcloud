@@ -15,13 +15,16 @@ enum SettingsFields: String {
     case nextcloudPassword =  "nextcloudPassword"
     case nextcloudUser = "nextcloudUser"
     case nextcloudRoot = "nextcloudRoot"
+    case nextcloudTarget = "nextcloudTarget"
     
     static let allFields = [
         flashairHost,
         flashairRoot,
         nextcloudHost,
         nextcloudPassword,
-        nextcloudUser]
+        nextcloudUser,
+        nextcloudRoot,
+        nextcloudTarget]
 }
 
 class Settings {
@@ -33,15 +36,25 @@ class Settings {
     // should prompt user to enter settings and create if doesn't exist
     
     var settings : Dictionary<String, Any>
-    let url = Bundle.main.url(forResource: "Settings", withExtension: "plist")!
+    let saveUrl: URL
+    let defautUrl = Bundle.main.url(forResource: "Settings", withExtension: "plist")!
     private init(){
-        
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        saveUrl = paths[0].appendingPathComponent("Settings.plist")
         do {
-            let data = try Data(contentsOf: url)
+            let data:Data
+            if let saved = try? Data(contentsOf: saveUrl){
+                data = saved
+                NSLog("using saved settings!")
+            }
+            else {
+                data = try Data(contentsOf: defautUrl)
+            }
             settings =  try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:Any]
+            
         }
         catch {
-            NSLog("Error Opening Settings.plist")
+            NSLog("Unable to open Settings plist")
             exit(1)
         }
     }
@@ -54,14 +67,19 @@ class Settings {
     
     func update(field: SettingsFields, value: String){
         settings[field.rawValue] = value
+        
+    }
+    
+    func save() -> Bool {
         do {
             let result:Data
             try result = PropertyListSerialization.data(fromPropertyList: settings, format: .xml, options: 0)
-            try result.write(to: url)
+            try result.write(to: saveUrl)
         }
         catch{
             NSLog("Error searializing settings")
-            return
+            return false
         }
+        return true
     }
 }

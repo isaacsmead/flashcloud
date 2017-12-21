@@ -26,9 +26,8 @@ enum cgiArgs : String {
 }
 
 extension Notification.Name {
-    static let requestError =  Notification.Name(rawValue:"request-error")
+    static let flashAirError =  Notification.Name(rawValue:"flashair-error")
 }
-
 
 class FlashairConnection  {
     
@@ -39,13 +38,17 @@ class FlashairConnection  {
         let urlStr = makeUrlString(command: cgiScripts.command.rawValue,
                                    args: [cgiArgs.getFileList.rawValue, makeDirQueryString(path: path)])
         Alamofire.request(urlStr, method: .get)
+            .validate()
             .responseString { (response) in
-                if(response.result.isSuccess == false){
-                    NSLog(response.result.debugDescription)
-                }
-                else if let list = response.result.value {
+                if response.result.isSuccess, let list = response.result.value {
                     let (dirNames, imageNames) = self.parseFileList(list: list)
                     callback(dirNames, imageNames)
+                }
+                else {
+                    let description = response.result.error?.localizedDescription ?? "No Desription"
+                    NSLog("getFileListError: \(description)")
+                    NotificationCenter.default.post(name: .flashAirError, object: self,
+                                                    userInfo: ["message": "Failed to get file list"])
                 }
         }
     }
@@ -56,12 +59,16 @@ class FlashairConnection  {
         let urlStr = makeUrlString(command: cgiScripts.thumbnail.rawValue, args: [fullPath])
         
         Alamofire.request(urlStr, method: .get)
+            .validate()
             .responseImage { response in
-                if response.result.isFailure, let error = response.result.error{
-                    NSLog("get thumbnail error:", error.localizedDescription)
-                }
-                else if let image = response.result.value {
+                if response.result.isSuccess, let image = response.result.value {
                     callback(fileName, image)
+                }
+                else {
+                    let description = response.result.error?.localizedDescription ?? "No Description"
+                    NSLog("getThumbnail error: \(description)")
+                    NotificationCenter.default.post(name: .flashAirError, object: self,
+                                                    userInfo: ["message": "Failed to get thumbnail"])
                 }
         }
     }
@@ -70,30 +77,38 @@ class FlashairConnection  {
         let rootDir = Settings.shared[.flashairRoot]
         let fullPath =  (path == "") ? "DEL=/\(rootDir)/\(fileName)" : "DEL=/\(rootDir)/\(path)/\(fileName)"
         let urlStr = makeUrlString(command: cgiScripts.upload.rawValue, args: [fullPath])
-        Alamofire.request(urlStr).responseString { (response) in
-            if(response.result.isSuccess == false){
-                NSLog(response.result.debugDescription)
-            }
-            else if let status = response.result.value {
-                if(status == "SUCCESS"){
-                    callback(fileName)
+        Alamofire.request(urlStr)
+            .validate()
+            .responseString { (response) in
+                if response.result.isSuccess && response.result.value == "SUCCESS" {
+                        callback(fileName)
                 }
-            }
+                else {
+                    let message = response.result.error?.localizedDescription ?? "No Description"
+                    NSLog("deleteFile error: \(message)")
+                    NotificationCenter.default.post(name: .flashAirError, object: self,
+                                                    userInfo: ["message": "Failed to delete file"])
+                }
+
         }
     }
     
-    class func getImage(fileName: String, path: String, callback: @escaping (String, UIImage) -> Void){
+    class func getImageData(fileName: String, path: String, callback: @escaping (String, Data) -> Void){
         let rootDir = Settings.shared[.flashairRoot]
         let fullPath =  (path == "") ? "\(rootDir)/\(fileName)" : "\(rootDir)/\(path)/\(fileName)"
         let urlStr = makeUrlString(command: "", args: [fullPath])
         
         Alamofire.request(urlStr, method: .get)
-            .responseImage { response in
-                if response.result.isFailure, let error = response.result.error{
-                    NSLog("get image error:", error.localizedDescription)
+            .validate()
+            .responseData { response in
+                if response.result.isSuccess, let data = response.result.value {
+                    callback(fileName, data)
                 }
-                else if let image = response.result.value {
-                    callback(fileName, image)
+                else {
+                    let description = response.result.error?.localizedDescription ?? "No Description"
+                    NSLog("get image error: \(description)")
+                    NotificationCenter.default.post(name: .flashAirError, object: self,
+                                                    userInfo: ["message": "Failed to get Image"])
                 }
         }
     }
@@ -113,8 +128,6 @@ class FlashairConnection  {
                 else if (String(elements[1]).hasSuffix(".JPG") || String(elements[1]).hasSuffix(".jpg")){
                     imageNames.append(String(elements[1]))
                 }
-                
-                
             }
         }
         return (dirs, imageNames)
@@ -122,6 +135,10 @@ class FlashairConnection  {
 
     private class func makeUrlString(command: String, args: [String]) -> String{
         let host = Settings.shared[.flashairHost]
+        if(command == "" && args.count == 1){
+            return "http://\(host)/\(args[0])"
+        }
+        
         var url = "http://\(host)/\(command)"
         for (index, arg) in args.enumerated() {
             let connector = (( index == 0 ) ? "?" : "&")

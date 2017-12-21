@@ -12,12 +12,13 @@ import UIKit
 class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var navBar: UINavigationItem!
+    
     
     var thumbs = ThumbnailCollection()
     var dirs: [String] = []
     var path: [String] = []
-    
-    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +27,23 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
         collectionView?.dataSource = self
         collectionView?.collectionViewLayout = CustomLayout()
         collectionView?.allowsMultipleSelection = true
-        
-        // Uncomment the following line to preserve selection between presentations
-        //self.clearsSelectionOnViewWillAppear = true
 
         if let savedPath = UserDefaults.standard.string(forKey: "savedPath"){
             path = savedPath.components(separatedBy: "/")
         }
         
+        let nc = NotificationCenter.default
+        nc.addObserver(self,
+                     selector: #selector(handleFlashairError),
+                     name: .flashAirError,
+                     object: nil)
+        
+        nc.addObserver(self,
+                       selector: #selector(handleNextcloudError),
+                       name: .nextCloudError,
+                       object: nil)
+        
+        updateTitle()
         updateFileList()
         // Do any additional setup after loading the view.
     }
@@ -42,6 +52,8 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //***********************************  OUTLETS *******************************************************
     
     @IBAction func upOneLevel(_ sender: UIBarButtonItem) {
         deselectAll()
@@ -59,9 +71,53 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     @IBAction func uploadSelected(_ sender: UIBarButtonItem) {
+        for fileName in thumbs.getSelected() {
+            FlashairConnection.getImageData(fileName: fileName, path: path.joined(separator: "/"), callback: onImageDownloaded)
+        }
     }
     
-    // MARK: UICollectionViewDataSource
+    //***********************************  CALLBACKS  *******************************************************
+
+    func onImageDownloaded(_ fileName: String,_  data: Data){
+        CloudConnection.shared.uploadImageData(data: data, fileName: fileName, callBack: onFileUploaded)
+    }
+    
+    func onFlashairFileList(_ dirNames:[String], _ fileNames:[String]){
+        dirs = dirNames
+        collectionView?.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition(rawValue: 0))
+        thumbs = ThumbnailCollection(imageFiles: fileNames)
+        for fileName in thumbs.getFileNames(){
+            FlashairConnection.getThumbnail(fileName: fileName, path: path.joined(separator: "/"), callback: self.onThumbnail)
+        }
+        updateTitle()
+        collectionView.reloadData()
+    }
+    
+    func onThumbnail(_ fileName:String, _ thumb: UIImage){
+        if let row = thumbs.addThumbnail(fileName: fileName, image: thumb) {
+            let ip = IndexPath(row: row, section: 1)
+            collectionView.reloadItems(at: [ip])
+            if thumbs.isSelected(fileName: fileName){
+                collectionView.cellForItem(at: ip)?.isSelected = true
+            }
+        }
+        else {
+            NSLog("Error, unexpected thumbnail \(fileName)")
+        }
+    }
+    
+    func onFileUploaded(_ fileName:String){
+        FlashairConnection.deleteFile(fileName: fileName,
+                                      path: path.joined(separator: "/"),callback: onFileDeleted)
+    }
+    
+    func onFileDeleted(_ fileName:String){
+        thumbs.remove(fileName: fileName)
+        deselectAll()
+        collectionView.reloadData()
+    }
+    
+    //***********************************  DELEGATES  *******************************************************
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -87,7 +143,6 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
             return cell
 
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -107,31 +162,26 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
-    func onFlashairFileList(_ dirNames:[String], _ fileNames:[String]){
-        dirs = dirNames
-        collectionView?.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition(rawValue: 0))
-        thumbs = ThumbnailCollection(imageFiles: fileNames)
-        for fileName in thumbs.getFileNames(){
-            FlashairConnection.getThumbnail(fileName: fileName, path: path.joined(separator: "/"), callback: self.onThumbnail)
-        }
+    //***********************************  HELPERS  *******************************************************
 
-        collectionView.reloadData()
+    @objc private func handleFlashairError(_ notification: NSNotification){
+        let message = notification.userInfo?["message"] as? String ?? "Unknown Error"
+        showAlert(title: "Flashair Error", message: message)
     }
     
-    func onThumbnail(_ fileName:String, _ thumb: UIImage){
-        if !thumbs.addThumbnail(fileName: fileName, image: thumb) {
-            NSLog("Error, unexpected thumbnail \(fileName)")
-        }
-        collectionView.reloadItems(at: <#T##[IndexPath]#>)
-        //collectionView.reloadData()
+    @objc private func handleNextcloudError(_ notification: NSNotification){
+        let message = notification.userInfo?["message"] as? String ?? "Unknown Error"
+        showAlert(title: "NextCloud Error", message: message)
     }
     
-    func onFileDeleted(_ fileName:String){
-        thumbs.remove(fileName: fileName)
-        deselectAll()
-        collectionView.reloadData()
+    private func showAlert(title: String, message: String){
+        let alertController =
+            UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController
+            .addAction(UIAlertAction(title: "OK",  style: UIAlertActionStyle.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
-
+    
     private func updateFileList(){
         FlashairConnection.getFileList(path: path.joined(separator: "/"), callback: self.onFlashairFileList)
     }
@@ -139,6 +189,15 @@ class FlashairNavigator: UIViewController, UICollectionViewDelegate, UICollectio
     private func deselectAll(){
         for index in collectionView.indexPathsForSelectedItems! {
             collectionView.deselectItem(at: index, animated: false)
+        }
+    }
+    
+    private func updateTitle(){
+        if let currentDir = path.last {
+            navBar.title = currentDir
+        }
+        else{
+            navBar.title = Settings.shared[.flashairRoot]
         }
     }
     

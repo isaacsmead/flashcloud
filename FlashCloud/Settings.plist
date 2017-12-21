@@ -3,16 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>flashairHost</key>
-	<string>192.168.1.09</string>
+	<string>192.168.1.50</string>
 	<key>flashairRoot</key>
 	<string>DCIM</string>
 	<key>nextcloudHost</key>
-	<string>76.88.58.107</string>
-	<key>nexcloudPassword</key>
+	<string>76.88.58.107/nextcloud</string>
+	<key>nextcloudPassword</key>
 	<string>cs646test</string>
 	<key>nextcloudUser</key>
 	<string>cs646</string>
 	<key>nextcloudRoot</key>
+	<string>remote.php/dav/files</string>
+	<key>nextcloudTarget</key>
 	<string>flashair</string>
 </dict>
 </plist>

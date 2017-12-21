@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4E9713271FCD3B0E0074DC06 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9713261FCD3B0E0074DC06 /* folder.png */; };
+		6A2AE1B51FEB020300B64BBA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A2AE1B41FEB020300B64BBA /* README.txt */; };
 		6A2F5F571FC9070500BDA424 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */; };
 		6A2F5F581FC9070500BDA424 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F561FC9070500BDA424 /* Alamofire.framework */; };
 		6A425B5A1FE98523006473D0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A425B591FE98523006473D0 /* Settings.swift */; };
 		6A425B5C1FE9AFD0006473D0 /* CloudConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A425B5B1FE9AFD0006473D0 /* CloudConnection.swift */; };
+		6A425B5E1FEA4A7B006473D0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A425B5D1FEA4A7B006473D0 /* SettingsTableViewController.swift */; };
 		6A468BE81FE83BBF00137DC1 /* defaultImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A468BE71FE83BBF00137DC1 /* defaultImage2.png */; };
 		6A468BEA1FE843CB00137DC1 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A468BE91FE843CB00137DC1 /* CustomLayout.swift */; };
 		6A468BEC1FE883BE00137DC1 /* CustonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A468BEB1FE883BE00137DC1 /* CustonNavigationController.swift */; };
@@ -26,7 +28,6 @@
 		6A6A52E71FCCF4B40099B72E /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A52E61FCCF4B40099B72E /* ThumbnailCell.swift */; };
 		6A6A52E91FCCF4C80099B72E /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A52E81FCCF4C80099B72E /* FolderCell.swift */; };
 		6A6A52EB1FCD1B8D0099B72E /* ThumbnailCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A52EA1FCD1B8D0099B72E /* ThumbnailCollection.swift */; };
-		6AD0E7731FCA9743006D2C89 /* NextcloudConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0E7721FCA9743006D2C89 /* NextcloudConnection.swift */; };
 		6AD0E7751FCA976D006D2C89 /* FlashairConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD0E7741FCA976D006D2C89 /* FlashairConnection.swift */; };
 		6AD0E7771FCA9950006D2C89 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AD0E7761FCA9950006D2C89 /* Settings.plist */; };
 /* End PBXBuildFile section */
@@ -50,10 +51,12 @@
 
 /* Begin PBXFileReference section */
 		4E9713261FCD3B0E0074DC06 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+		6A2AE1B41FEB020300B64BBA /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		6A2F5F561FC9070500BDA424 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6A425B591FE98523006473D0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6A425B5B1FE9AFD0006473D0 /* CloudConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudConnection.swift; sourceTree = "<group>"; };
+		6A425B5D1FEA4A7B006473D0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6A468BE71FE83BBF00137DC1 /* defaultImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage2.png; sourceTree = "<group>"; };
 		6A468BE91FE843CB00137DC1 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		6A468BEB1FE883BE00137DC1 /* CustonNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonNavigationController.swift; sourceTree = "<group>"; };
@@ -75,7 +78,6 @@
 		6A6A52E81FCCF4C80099B72E /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		6A6A52EA1FCD1B8D0099B72E /* ThumbnailCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollection.swift; sourceTree = "<group>"; };
 		6A6A52EF1FCD1FA00099B72E /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
-		6AD0E7721FCA9743006D2C89 /* NextcloudConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextcloudConnection.swift; sourceTree = "<group>"; };
 		6AD0E7741FCA976D006D2C89 /* FlashairConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashairConnection.swift; sourceTree = "<group>"; };
 		6AD0E7761FCA9950006D2C89 /* Settings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 		6A56635B1FC8843A008E0E8D = {
 			isa = PBXGroup;
 			children = (
+				6A2AE1B41FEB020300B64BBA /* README.txt */,
 				6A5663661FC8843A008E0E8D /* FlashCloud */,
 				6A56637B1FC8843A008E0E8D /* FlashCloudTests */,
 				6A5663861FC8843A008E0E8D /* FlashCloudUITests */,
@@ -147,7 +150,6 @@
 				6A56636E1FC8843A008E0E8D /* Assets.xcassets */,
 				6A5663701FC8843A008E0E8D /* LaunchScreen.storyboard */,
 				6A5663731FC8843A008E0E8D /* Info.plist */,
-				6AD0E7721FCA9743006D2C89 /* NextcloudConnection.swift */,
 				6AD0E7741FCA976D006D2C89 /* FlashairConnection.swift */,
 				6AD0E7761FCA9950006D2C89 /* Settings.plist */,
 				6A6A52E41FCCF48E0099B72E /* FlashairNavigator.swift */,
@@ -158,6 +160,7 @@
 				6A468BEB1FE883BE00137DC1 /* CustonNavigationController.swift */,
 				6A425B591FE98523006473D0 /* Settings.swift */,
 				6A425B5B1FE9AFD0006473D0 /* CloudConnection.swift */,
+				6A425B5D1FEA4A7B006473D0 /* SettingsTableViewController.swift */,
 			);
 			path = FlashCloud;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				6A468BE81FE83BBF00137DC1 /* defaultImage2.png in Resources */,
 				6A56636D1FC8843A008E0E8D /* Main.storyboard in Resources */,
 				6AD0E7771FCA9950006D2C89 /* Settings.plist in Resources */,
+				6A2AE1B51FEB020300B64BBA /* README.txt in Resources */,
 				4E9713271FCD3B0E0074DC06 /* folder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,10 +355,10 @@
 				6A6A52E91FCCF4C80099B72E /* FolderCell.swift in Sources */,
 				6A425B5C1FE9AFD0006473D0 /* CloudConnection.swift in Sources */,
 				6A6A52E51FCCF48E0099B72E /* FlashairNavigator.swift in Sources */,
-				6AD0E7731FCA9743006D2C89 /* NextcloudConnection.swift in Sources */,
 				6A6A52EB1FCD1B8D0099B72E /* ThumbnailCollection.swift in Sources */,
 				6AD0E7751FCA976D006D2C89 /* FlashairConnection.swift in Sources */,
 				6A56636A1FC8843A008E0E8D /* ViewController.swift in Sources */,
+				6A425B5E1FEA4A7B006473D0 /* SettingsTableViewController.swift in Sources */,
 				6A468BEC1FE883BE00137DC1 /* CustonNavigationController.swift in Sources */,
 				6A425B5A1FE98523006473D0 /* Settings.swift in Sources */,
 				6A5663681FC8843A008E0E8D /* AppDelegate.swift in Sources */,

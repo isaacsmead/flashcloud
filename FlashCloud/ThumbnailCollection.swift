@@ -25,12 +25,12 @@ class ThumbnailCollection {
         fileNames = imageFiles
     }
     
-    func addThumbnail(fileName: String, image: UIImage) -> Bool{
-        if fileNames.contains(fileName){
+    func addThumbnail(fileName: String, image: UIImage) -> Int?{
+        if let idx = fileNames.index(of: fileName){
             thumbs[fileName] = image
-            return true
+            return idx
         }
-        return false
+        return nil
     }
     
     subscript (index: Int) -> UIImage {
@@ -78,4 +78,13 @@ class ThumbnailCollection {
     func getSelected() -> [String] {
         return Array(selected)
     }
+    
+    func getIndex(fileName: String) -> Int?{
+        return fileNames.index(of: fileName)
+    }
+    
+    func isSelected(fileName: String) -> Bool{
+        return selected.contains(fileName)
+    }
+    
 }
