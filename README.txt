@@ -30,7 +30,7 @@ SETUP -- (to get flashair on your wireless lan)
     I just left it plugged into my desktop and had a continuous connection.  Not sure
     about laptops, i've read some cut power when not reading SD cards.
 
-MY APP
+USING THE APP
 1.  when app opens navigate to settings screen
 
 2.  change Flashair Settings -> Host to what ever IP you chose above for the flashair
@@ -45,6 +45,7 @@ MY APP
 6.  you can see uploaded images at: https://76.88.58.107/nextcloud
     user: cs646
     password: cs646test
+    the server (raspberry pi) is pretty slow and you'll get a security warning because it uses self-signed cert
 
 KNOWN ISSUES
 1.  I need to add an event loop to check for connection/updates etc.  For now the only way a data
@@ -52,13 +53,13 @@ KNOWN ISSUES
 
 
 SHORTCOMINGS
-I spend a lot of time spinning my wheels figuring out how all the moving parts worked and didn't get as much
+I spent a lot of time spinning my wheels figuring out how all the moving parts worked and didn't get as much
 functionality done as planned.  One major thing I wanted to do was display full screen images and
-gesture actions like tinder.  Swipe left to delete, right to send to cloud.
+have gesture actions like tinder.  Swipe left to delete, right to send to cloud.
 
-Looking bigger picture the real-world issue with my app is that no normal user would want to modify the
-config file for the flashair.  The app could take care of all these things, but to make it really
-smooth it would require writing some lua scripts for the flashair itself.  It's something I'll probably
+The real-world issue with my app is that no normal user would want to modify the config file
+for the flashair.  The app could take care of all these things, but to make it really smooth
+it would require writing some lua scripts for the flashair itself.  It's something I'll probably
 do in the future because it would be great to walk into the house with a camera full of pictures and
 have everything push to my cloud by just turning on the camera.
 
@@ -72,8 +73,18 @@ Some other things I would do before "shipping".
 - Busy indicators when waiting on network
 - More robust/desciptive alert system
 - use keychain to store nextcloud credentials
-- check fields, immediate feedback for nextcloud login
+- check input fields, immediate feedback for nextcloud login
 - pretty colors
+
+REFERENCE
+  3rd party libs
+   - ALamofire
+   - AlamofireImage
+   - Carthage (used to build Alamofire)
+
+  API
+  - https://www.flashair-developers.com/en/
+  - https://docs.nextcloud.com/server/12/developer_manual/client_apis/WebDAV/index.html
 
 
 
