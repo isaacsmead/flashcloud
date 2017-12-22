@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4E9713271FCD3B0E0074DC06 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9713261FCD3B0E0074DC06 /* folder.png */; };
+		4E978C871FEC8BA700C48918 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F561FC9070500BDA424 /* Alamofire.framework */; };
+		4E978C881FEC8BA700C48918 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */; };
+		4E978C8C1FEC8C1300C48918 /* AlamofireImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4E978C8A1FEC8C1200C48918 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E978C8D1FEC8C1300C48918 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4E978C8B1FEC8C1200C48918 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6A2AE1B51FEB020300B64BBA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A2AE1B41FEB020300B64BBA /* README.txt */; };
-		6A2F5F571FC9070500BDA424 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */; };
-		6A2F5F581FC9070500BDA424 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2F5F561FC9070500BDA424 /* Alamofire.framework */; };
 		6A425B5A1FE98523006473D0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A425B591FE98523006473D0 /* Settings.swift */; };
 		6A425B5C1FE9AFD0006473D0 /* CloudConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A425B5B1FE9AFD0006473D0 /* CloudConnection.swift */; };
 		6A425B5E1FEA4A7B006473D0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A425B5D1FEA4A7B006473D0 /* SettingsTableViewController.swift */; };
@@ -49,8 +51,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4E978C891FEC8BCC00C48918 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4E978C8C1FEC8C1300C48918 /* AlamofireImage.framework in CopyFiles */,
+				4E978C8D1FEC8C1300C48918 /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4E9713261FCD3B0E0074DC06 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+		4E978C831FEC8A5D00C48918 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = FlashCloud/AlamofireImage.framework; sourceTree = "<group>"; };
+		4E978C841FEC8A5D00C48918 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = FlashCloud/Alamofire.framework; sourceTree = "<group>"; };
+		4E978C8A1FEC8C1200C48918 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		4E978C8B1FEC8C1200C48918 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6A2AE1B41FEB020300B64BBA /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		6A2F5F561FC9070500BDA424 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -87,8 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A2F5F571FC9070500BDA424 /* AlamofireImage.framework in Frameworks */,
-				6A2F5F581FC9070500BDA424 /* Alamofire.framework in Frameworks */,
+				4E978C871FEC8BA700C48918 /* Alamofire.framework in Frameworks */,
+				4E978C881FEC8BA700C48918 /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +132,8 @@
 		6A2F5F541FC9070500BDA424 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E978C841FEC8A5D00C48918 /* Alamofire.framework */,
+				4E978C831FEC8A5D00C48918 /* AlamofireImage.framework */,
 				6A2F5F561FC9070500BDA424 /* Alamofire.framework */,
 				6A2F5F551FC9070500BDA424 /* AlamofireImage.framework */,
 			);
@@ -121,6 +143,8 @@
 		6A56635B1FC8843A008E0E8D = {
 			isa = PBXGroup;
 			children = (
+				4E978C8B1FEC8C1200C48918 /* Alamofire.framework */,
+				4E978C8A1FEC8C1200C48918 /* AlamofireImage.framework */,
 				6A2AE1B41FEB020300B64BBA /* README.txt */,
 				6A5663661FC8843A008E0E8D /* FlashCloud */,
 				6A56637B1FC8843A008E0E8D /* FlashCloudTests */,
@@ -201,9 +225,9 @@
 			buildConfigurationList = 6A56638C1FC8843A008E0E8D /* Build configuration list for PBXNativeTarget "FlashCloud" */;
 			buildPhases = (
 				6A5663601FC8843A008E0E8D /* Sources */,
+				4E978C891FEC8BCC00C48918 /* CopyFiles */,
 				6A5663611FC8843A008E0E8D /* Frameworks */,
 				6A5663621FC8843A008E0E8D /* Resources */,
-				6A2F5F591FC9077D00BDA424 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -326,24 +350,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6A2F5F591FC9077D00BDA424 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6A5663601FC8843A008E0E8D /* Sources */ = {
@@ -534,6 +540,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/FlashCloud",
 				);
 				INFOPLIST_FILE = FlashCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -556,6 +563,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/FlashCloud",
 				);
 				INFOPLIST_FILE = FlashCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
